@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coiled_stability"
+description = "Coiled Stability Test Suite"
+readme = "README.rst"
+keywords = ["stability", "test"]
+license = {text = "BSD 3-Clause License"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    'importlib-metadata; python_version<"3.8"',
+    'coiled == 0.0.73',
+    'pytest',
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+
+[project.scripts]
+coiled-stability = "coiled_stability.cli:run"
